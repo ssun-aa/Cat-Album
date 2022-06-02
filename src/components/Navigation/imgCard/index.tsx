@@ -1,17 +1,15 @@
-import { UnlikeIcon, LikeIcon } from 'assets/svgs/index.js';
+import { LikeIcon } from 'assets/svgs/index.js';
 import store from 'storejs';
 import { favListState } from 'recoil/atom';
 import { useRecoilState } from 'recoil';
 import styles from './imgCard.module.scss';
 
 interface Prop {
-  // eslint-disable-next-line react/require-default-props
-  width: string;
   mainCat: string;
   alreadyFavorite: boolean;
 }
 
-function ImgCard({ width, mainCat, alreadyFavorite }: Prop) {
+function ImgCard({ mainCat, alreadyFavorite }: Prop) {
   const [favoriteList, setFavoriteList] =
     useRecoilState<string[]>(favListState);
 
@@ -28,13 +26,13 @@ function ImgCard({ width, mainCat, alreadyFavorite }: Prop) {
   }
 
   return (
-    <div className={styles.cardWrap} style={{ width }}>
+    <div className={styles.cardWrap}>
       <img src={mainCat} alt="고양이" width="100%" className={styles.img} />
       <button type="button" onClick={onHeartClick}>
         {alreadyFavorite ? (
-          <LikeIcon className={styles.icon} />
+          <LikeIcon className={styles.likedicon} />
         ) : (
-          <UnlikeIcon />
+          <LikeIcon className={styles.unLikedicon} />
         )}
       </button>
     </div>
