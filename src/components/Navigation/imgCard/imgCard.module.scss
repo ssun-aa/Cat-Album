@@ -1,0 +1,20 @@
+@use '/src/styles/constants/colors';
+
+.cardWrap {
+  position: relative;
+  display: inline-block;
+  margin: 10px;
+
+  .img {
+    border-radius: 20px;
+  }
+
+  button {
+    position: absolute;
+    right: 0;
+
+    .icon {
+      fill: colors.$YELLOW;
+    }
+  }
+}

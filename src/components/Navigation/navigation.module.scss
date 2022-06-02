@@ -1,0 +1,18 @@
+@use '/src/styles/constants/colors';
+
+.wrap {
+  display: flex;
+  height: 80px;
+  margin-top: 10px;
+  background-color: colors.$WHITE;
+  border-radius: 40px;
+  box-shadow: 0 -5px 100px 0 rgba(gray, 0.1);
+
+  .icon {
+    flex: 1;
+    padding: 25px 0;
+    margin: 0 auto;
+    text-align: center;
+    fill: gray;
+  }
+}
