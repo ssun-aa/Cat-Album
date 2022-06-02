@@ -4,12 +4,10 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Favorites from './Favorites';
 import Main from './Main';
 
-import styles from './app.module.scss';
-
 function App() {
   return (
     <RecoilRoot>
-      <Router basename={process.env.PUBLIC_URL}>
+      <Router>
         <Routes>
           <Route element={<Layout />}>
             <Route path="" element={<Main />} />

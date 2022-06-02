@@ -1,6 +1,5 @@
 import { atom } from 'recoil';
 import store from 'storejs';
-import { IListItem } from '../types/picture.d';
 
 const data = store.get('favoriteList');
 export const favListState = atom<string[]>({

@@ -9,7 +9,7 @@ function Form({ updateMainCat }: Prop) {
   const includesHangul = (text: string) => /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/i.test(text);
   const [value, setValue] = useState('');
 
-  function handleInputChange(e: { target: { value: any } }) {
+  function handleInputChange(e: { target: { value: string } }) {
     const userValue = e.target.value;
     if (includesHangul(userValue)) alert('한글은 입력할 수 없습니다.');
     setValue(userValue.toUpperCase());

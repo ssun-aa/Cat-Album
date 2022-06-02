@@ -9,8 +9,8 @@ const fetcher = async (text: string): Promise<string> => {
 
     const { url } = response.data;
     return `${OPEN_API_DOMAIN}${url}`;
-  } catch (e) {
-    return 'e';
+  } catch (e: any) {
+    return e.message;
   }
 };
 

@@ -2,15 +2,13 @@ import { fetcher } from 'utils';
 import { useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
 import { favListState } from 'recoil/atom';
-import store from 'storejs';
 import ImgCard from 'components/Navigation/imgCard';
 import styles from './main.module.scss';
 import Form from './Form';
 
 function Main() {
   const [mainCat, setMainCat] = useState<string>('');
-  const [favoriteList, setFavoriteList] =
-    useRecoilState<string[]>(favListState);
+  const [favoriteList] = useRecoilState<string[]>(favListState);
   const [alreadyFavorite, setAlreadyFavorite] = useState(false);
 
   const setInitialCat = async () => {
@@ -35,11 +33,7 @@ function Main() {
     <div className={styles.wrap}>
       <Form updateMainCat={updateMainCat} />
       <div className={styles.main}>
-        <ImgCard
-          width="90%"
-          mainCat={mainCat}
-          alreadyFavorite={alreadyFavorite}
-        />
+        <ImgCard mainCat={mainCat} alreadyFavorite={alreadyFavorite} />
       </div>
     </div>
   );
