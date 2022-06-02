@@ -6,7 +6,7 @@ import {
 } from 'react-beautiful-dnd';
 import { useRecoilState } from 'recoil';
 import { favListState } from 'recoil/atom';
-import ImgCard from 'components/Navigation/imgCard';
+import ImgCard from 'components/imgCard';
 import styles from './favorites.module.scss';
 
 function Favorites() {

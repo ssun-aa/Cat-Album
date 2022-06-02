@@ -6,7 +6,7 @@ function Navigation() {
   return (
     <div className={styles.wrap}>
       <NavLink
-        to="/"
+        to="/create"
         className={styles.icon}
         style={({ isActive }) => (isActive ? { fill: '#45495C' } : {})}
       >
