@@ -8,14 +8,14 @@ function Navigation() {
       <NavLink
         to="/"
         className={styles.icon}
-        style={({ isActive }) => (isActive ? { fill: 'black' } : {})}
+        style={({ isActive }) => (isActive ? { fill: '#45495C' } : {})}
       >
         <SearchIcon />
       </NavLink>
       <NavLink
         to="/fav"
         className={styles.icon}
-        style={({ isActive }) => (isActive ? { fill: 'black' } : {})}
+        style={({ isActive }) => (isActive ? { fill: '#45495C' } : {})}
       >
         <StarIcon />
       </NavLink>

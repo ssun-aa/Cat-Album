@@ -32,16 +32,8 @@
     text-align: center;
 
     li {
-      height: 80px;
-      padding: 10px;
-      cursor: pointer;
-      background-color: colors.$WHITE;
-      border-radius: 10px;
-      box-shadow: 0 5px 5px 0 rgba(black, 0.1);
-
-      + li {
-        margin-top: 14px;
-      }
+      display: inline-block;
+      width: 50%;
     }
   }
 }
