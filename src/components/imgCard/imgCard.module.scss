@@ -17,10 +17,20 @@
 
     .likedicon {
       fill: colors.$POINT_COLOR;
+      transition: all 200ms ease-in-out;
+
+      &:hover {
+        transform: scale(1.2);
+      }
     }
 
     .unLikedicon {
       fill: colors.$GRAYD;
+      transition: all 200ms ease-in-out;
+
+      &:hover {
+        transform: scale(1.2);
+      }
     }
   }
 }
