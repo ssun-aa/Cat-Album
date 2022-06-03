@@ -1,5 +1,4 @@
-export { ReactComponent as SearchIcon } from './search.svg';
-export { ReactComponent as StarIcon } from './star.svg';
-export { ReactComponent as ColorStarIcon } from './colorStar.svg';
-export { ReactComponent as CancelIcon } from './cancel.svg';
 export { ReactComponent as LikeIcon } from './like.svg';
+export { ReactComponent as TagIcon } from './tag.svg';
+export { ReactComponent as HeartIcon } from './heart.svg';
+export { ReactComponent as PhotoIcon } from './photo.svg';
