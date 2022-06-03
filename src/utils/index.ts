@@ -1,1 +1,1 @@
-export { fetcher } from './fetcher';
+export { textImageApi, tagImageApi } from './fetcher';

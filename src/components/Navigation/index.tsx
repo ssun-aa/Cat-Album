@@ -1,4 +1,4 @@
-import { SearchIcon, StarIcon } from 'assets/svgs/index.js';
+import { TagIcon, HeartIcon, PhotoIcon } from 'assets/svgs/index.js';
 import { NavLink } from 'react-router-dom';
 import styles from './navigation.module.scss';
 
@@ -6,18 +6,25 @@ function Navigation() {
   return (
     <div className={styles.wrap}>
       <NavLink
+        to="/"
+        className={styles.icon}
+        style={({ isActive }) => (isActive ? { fill: '#AEBAE8' } : {})}
+      >
+        <TagIcon />
+      </NavLink>
+      <NavLink
         to="/create"
         className={styles.icon}
-        style={({ isActive }) => (isActive ? { fill: '#45495C' } : {})}
+        style={({ isActive }) => (isActive ? { fill: '#AEBAE8' } : {})}
       >
-        <SearchIcon />
+        <PhotoIcon />
       </NavLink>
       <NavLink
         to="/fav"
         className={styles.icon}
-        style={({ isActive }) => (isActive ? { fill: '#45495C' } : {})}
+        style={({ isActive }) => (isActive ? { fill: '#AEBAE8' } : {})}
       >
-        <StarIcon />
+        <HeartIcon />
       </NavLink>
     </div>
   );
