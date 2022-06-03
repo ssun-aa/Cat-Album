@@ -51,12 +51,7 @@ function Favorites() {
                       // eslint-disable-next-line react/jsx-props-no-spreading
                       {...provide.dragHandleProps}
                     >
-                      <ImgCard
-                        // eslint-disable-next-line react/no-array-index-key
-                        key={i}
-                        mainCat={item}
-                        alreadyFavorite
-                      />
+                      <ImgCard mainCat={item} alreadyFavorite />
                     </li>
                   )}
                 </Draggable>

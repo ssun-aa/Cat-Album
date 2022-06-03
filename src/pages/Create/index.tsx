@@ -1,4 +1,4 @@
-import { fetcher } from 'utils';
+import { textImageApi } from 'utils/fetcher';
 import { useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
 import { favListState } from 'recoil/atom';
@@ -12,12 +12,12 @@ function Create() {
   const [alreadyFavorite, setAlreadyFavorite] = useState(false);
 
   const setInitialCat = async () => {
-    const newCat: string = await fetcher(' ');
+    const newCat: string = await textImageApi(' ');
     setMainCat(newCat);
   };
 
   const updateMainCat = async (value: string) => {
-    const newCat = await fetcher(value);
+    const newCat = await textImageApi(value);
     setMainCat(newCat);
   };
 
