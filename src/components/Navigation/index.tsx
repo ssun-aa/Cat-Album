@@ -7,6 +7,7 @@ function Navigation() {
     <div className={styles.wrap}>
       <NavLink
         to="/"
+        aria-label="tagSearch"
         className={styles.icon}
         style={({ isActive }) => (isActive ? { fill: '#AEBAE8' } : {})}
       >
@@ -14,6 +15,7 @@ function Navigation() {
       </NavLink>
       <NavLink
         to="/create"
+        aria-label="photo"
         className={styles.icon}
         style={({ isActive }) => (isActive ? { fill: '#AEBAE8' } : {})}
       >
@@ -21,6 +23,7 @@ function Navigation() {
       </NavLink>
       <NavLink
         to="/fav"
+        aria-label="favorites"
         className={styles.icon}
         style={({ isActive }) => (isActive ? { fill: '#AEBAE8' } : {})}
       >

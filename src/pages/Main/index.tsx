@@ -62,8 +62,8 @@ function Main() {
         ))}
       </header>
       <main>
+        {noData()}
         <ul>
-          {noData()}
           {images.map((item: IListItem, i) => {
             const alreadyFavorite = favoriteList.some(
               (fav) => fav === item.url
