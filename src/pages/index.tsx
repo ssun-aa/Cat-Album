@@ -1,23 +1,30 @@
 import Layout from 'layout';
-import { RecoilRoot } from 'recoil';
+import { useRecoilState } from 'recoil';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { themeState } from 'recoil/atom';
+import { useEffect } from 'react';
 import Favorites from './Favorites';
 import Create from './Create';
 import Main from './Main';
 
 function App() {
+  const [theme, settheme] = useRecoilState(themeState);
+
+  useEffect(() => {
+    document.documentElement.setAttribute('color-theme', theme);
+    settheme(theme);
+  }, [settheme, theme]);
+
   return (
-    <RecoilRoot>
-      <Router>
-        <Routes>
-          <Route element={<Layout />}>
-            <Route path="" element={<Main />} />
-            <Route path="/create" element={<Create />} />
-            <Route path="/fav" element={<Favorites />} />
-          </Route>
-        </Routes>
-      </Router>
-    </RecoilRoot>
+    <Router>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="" element={<Main />} />
+          <Route path="/create" element={<Create />} />
+          <Route path="/fav" element={<Favorites />} />
+        </Route>
+      </Routes>
+    </Router>
   );
 }
 

@@ -1,5 +1,5 @@
 /* eslint-disable no-alert */
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styles from './form.module.scss';
 
 interface Prop {
@@ -29,10 +29,9 @@ function Form({ updateMainCat }: Prop) {
       <input
         type="text"
         name="name"
-        placeholder="영어 문구를 넣어주세요."
+        placeholder="이곳에 영어 문구를 넣은 후 엔터를 눌러주세요"
         onChange={handleInputChange}
       />
-      <button type="submit">➞</button>
     </form>
   );
 }

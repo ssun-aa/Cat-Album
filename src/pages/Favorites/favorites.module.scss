@@ -19,9 +19,17 @@
     border-radius: 40px;
     box-shadow: 0 5px 100px 0 rgba(gray, 0.1);
 
+    :root[color-theme='dark'] & {
+      background-color: colors.$GRAY4;
+    }
+
     p {
       margin: 0 auto;
-      color: colors.$GRAY1;
+      color: colors.$GRAY6;
+
+      :root[color-theme='dark'] & {
+        color: colors.$GRAYD;
+      }
     }
   }
 

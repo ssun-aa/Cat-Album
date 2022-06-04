@@ -1,23 +1,61 @@
 @use '/src/styles/constants/colors';
 
 .wrap {
+  position: relative;
   display: flex;
-  align-items: center;
-  height: 80px;
-  margin-top: 10px;
-  background-color: colors.$WHITE;
-  border-radius: 40px;
-  box-shadow: 0 -5px 100px 0 rgba(gray, 0.1);
+  flex-direction: column;
 
-  .icon {
-    flex: 1;
-    margin: 0 auto;
-    text-align: center;
-    fill: gray;
-    transition: all 100ms ease-in-out;
+  .theme {
+    position: absolute;
+    top: -70px;
+    right: 10px;
+    padding: 10px 12px;
+    background-color: colors.$BEIGE1;
+    border-radius: 50px;
+    box-shadow: 1px 3px 21px -6px rgba(135, 135, 135, 96%);
+    fill: colors.$POINT_COLOR;
 
-    &:hover {
-      transform: scale(1.2);
+    :root[color-theme='dark'] & {
+      background-color: colors.$DARK_BEIGE1;
+      box-shadow: 1px 3px 21px -6px rgba(71, 71, 71, 96%);
+    }
+
+    .themeIcon {
+      transition: all 100ms ease-in-out;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  .navWrap {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    margin-top: 10px;
+    background-color: colors.$WHITE;
+    border-radius: 40px;
+    box-shadow: 0 -5px 100px 0 rgba(gray, 0.1);
+
+    :root[color-theme='dark'] & {
+      background-color: colors.$GRAY4;
+    }
+
+    .icon {
+      flex: 1;
+      margin: 0 auto;
+      text-align: center;
+      fill: gray;
+      transition: all 100ms ease-in-out;
+
+      :root[color-theme='dark'] & {
+        fill: colors.$GRAYD;
+      }
+
+      &:hover {
+        transform: scale(1.2);
+      }
     }
   }
 }

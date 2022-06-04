@@ -7,3 +7,8 @@ export const favListState = atom<string[]>({
 
   default: data || [], // default value (aka initial value)
 });
+
+export const themeState = atom({
+  key: 'themeState',
+  default: 'light',
+});
