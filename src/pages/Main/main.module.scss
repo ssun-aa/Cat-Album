@@ -27,7 +27,9 @@
       border-radius: 40px;
       transition: all 100ms ease-in-out;
 
-      &:hover {
+      &:hover,
+      &.active {
+        background-color: #d9e0ff;
         transform: scale(1.2);
       }
     }

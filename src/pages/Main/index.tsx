@@ -4,10 +4,13 @@ import { useRecoilState } from 'recoil';
 import { favListState } from 'recoil/atom';
 import { IListItem } from 'types/image.d';
 import { tagImageApi } from 'utils/fetcher';
+import cx from 'classnames';
 import styles from './main.module.scss';
 
 function Main() {
   const [images, setImages] = useState([]);
+  const [clickedTag, setClickedTag] = useState('');
+
   const [favoriteList] = useRecoilState<string[]>(favListState);
   const tags = [
     {
@@ -33,9 +36,10 @@ function Main() {
   ];
 
   const handleClick = async (e: { currentTarget: { value: string } }) => {
-    const clickedTag = e.currentTarget.value;
-    const tag = tags.find((tag) => tag.name === clickedTag);
+    const clickedButton = e.currentTarget;
+    const tag = tags.find((tag) => tag.name === clickedButton.value);
     if (tag) {
+      setClickedTag(tag.name);
       const res = await tagImageApi(tag.id);
       setImages(res);
     }
@@ -49,22 +53,25 @@ function Main() {
   return (
     <div className={styles.wrap}>
       <header className={styles.tags}>
-        {tags.map((tag) => (
-          <button
-            key={tag.id}
-            type="button"
-            className={styles.tag}
-            onClick={handleClick}
-            value={tag.name}
-          >
-            {tag.name}
-          </button>
-        ))}
+        {tags.map((tag) => {
+          const isActive = tag.name === clickedTag;
+          return (
+            <button
+              key={tag.id}
+              type="button"
+              className={cx(styles.tag, { [styles.active]: isActive })}
+              onClick={handleClick}
+              value={tag.name}
+            >
+              {tag.name}
+            </button>
+          );
+        })}
       </header>
       <main>
         {noData()}
         <ul>
-          {images.map((item: IListItem, i) => {
+          {images.map((item: IListItem) => {
             const alreadyFavorite = favoriteList.some(
               (fav) => fav === item.url
             );
