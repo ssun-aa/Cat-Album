@@ -37,7 +37,6 @@ function Favorites() {
           {(provided) => (
             <main
               className="favorites"
-              // eslint-disable-next-line react/jsx-props-no-spreading
               {...provided.droppableProps}
               ref={provided.innerRef}
             >
@@ -46,9 +45,7 @@ function Favorites() {
                   {(provide) => (
                     <li
                       ref={provide.innerRef}
-                      // eslint-disable-next-line react/jsx-props-no-spreading
                       {...provide.draggableProps}
-                      // eslint-disable-next-line react/jsx-props-no-spreading
                       {...provide.dragHandleProps}
                     >
                       <ImgCard mainCat={item} alreadyFavorite />
