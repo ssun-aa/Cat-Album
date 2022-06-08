@@ -34,7 +34,7 @@ function ImgCard({ tagName, mainCat, alreadyFavorite }: Prop) {
   }
 
   return (
-    <div className={styles.cardWrap}>
+    <div className={styles.cardWrap} onDoubleClick={onHeartClick}>
       <img src={mainCat} alt="고양이" width="100%" className={styles.img} />
       <button type="button" onClick={onHeartClick}>
         {alreadyFavorite ? (
