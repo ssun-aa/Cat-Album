@@ -25,7 +25,6 @@ function Chart() {
         <VictoryChart
           polar
           theme={VictoryTheme.material}
-          domain={{ y: [0, max] }}
           {...CHART_STYLE}
           containerComponent={
             <VictoryVoronoiContainer
