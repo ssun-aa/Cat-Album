@@ -1,4 +1,4 @@
-import ImgCard from 'components/imgCard';
+import ImgCard from 'components/ImgCard';
 import { useState } from 'react';
 import { useRecoilState } from 'recoil';
 import { favListState } from 'recoil/atom';

@@ -2,7 +2,7 @@ import { textImageApi } from 'utils/fetcher';
 import { useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
 import { favListState } from 'recoil/atom';
-import ImgCard from 'components/imgCard';
+import ImgCard from 'components/ImgCard';
 import { IImgCard } from 'types/image.d';
 import styles from './create.module.scss';
 import Form from './Form';
