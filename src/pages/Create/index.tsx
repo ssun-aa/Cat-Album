@@ -4,6 +4,7 @@ import { useRecoilState } from 'recoil';
 import { favListState } from 'recoil/atom';
 import ImgCard from 'components/ImgCard';
 import { IImgCard } from 'types/image.d';
+import Spinner from 'components/Spinner';
 import styles from './create.module.scss';
 import Form from './Form';
 
@@ -11,9 +12,12 @@ function Create() {
   const [mainCat, setMainCat] = useState<string>('');
   const [favoriteList] = useRecoilState<IImgCard[]>(favListState);
   const [alreadyFavorite, setAlreadyFavorite] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const setInitialCat = async () => {
+    setIsLoading((prev) => !prev);
     const newCat: string = await textImageApi(' ');
+    setIsLoading((prev) => !prev);
     setMainCat(newCat);
   };
 
@@ -34,11 +38,15 @@ function Create() {
     <div className={styles.wrap}>
       <Form updateMainCat={updateMainCat} />
       <div className={styles.main}>
-        <ImgCard
-          tagName=""
-          mainCat={mainCat}
-          alreadyFavorite={alreadyFavorite}
-        />
+        {isLoading ? (
+          <Spinner />
+        ) : (
+          <ImgCard
+            tagName=""
+            mainCat={mainCat}
+            alreadyFavorite={alreadyFavorite}
+          />
+        )}
       </div>
     </div>
   );
