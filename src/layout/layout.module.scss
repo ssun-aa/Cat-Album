@@ -1,0 +1,27 @@
+@use '/src/styles/constants/colors';
+
+.app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  .wrap {
+    position: relative;
+    width: 360px;
+    height: 100vh;
+    background-color: colors.$GRAYE;
+    border-radius: 40px;
+    box-shadow: 0 -5px 100px 0 rgba(black, 0.1);
+
+    :root[color-theme='dark'] & {
+      background-color: colors.$GRAY3;
+    }
+
+    .nav {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
+  }
+}

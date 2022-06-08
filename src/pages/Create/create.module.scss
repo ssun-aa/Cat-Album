@@ -1,0 +1,9 @@
+.wrap {
+  text-align: center;
+
+  .main {
+    display: flex;
+    height: 75vh;
+    overflow: scroll;
+  }
+}
