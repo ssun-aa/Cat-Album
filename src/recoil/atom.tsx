@@ -18,16 +18,16 @@ export const themeState = atom({
 export const favTagData = atom({
   key: '#favoriteData',
   default: [
-    { x: 'boxes', y: data.filter((d: IImgCard) => d.tag === 'boxes').length },
+    { x: 'boxes', y: data?.filter((d: IImgCard) => d.tag === 'boxes').length },
     {
       x: 'clothes',
-      y: data.filter((d: IImgCard) => d.tag === 'clothes').length,
+      y: data?.filter((d: IImgCard) => d.tag === 'clothes').length,
     },
-    { x: 'hats', y: data.filter((d: IImgCard) => d.tag === 'hats').length },
+    { x: 'hats', y: data?.filter((d: IImgCard) => d.tag === 'hats').length },
     {
       x: 'sunglasses',
-      y: data.filter((d: IImgCard) => d.tag === 'sunglasses').length,
+      y: data?.filter((d: IImgCard) => d.tag === 'sunglasses').length,
     },
-    { x: 'ties', y: data.filter((d: IImgCard) => d.tag === 'ties').length },
+    { x: 'ties', y: data?.filter((d: IImgCard) => d.tag === 'ties').length },
   ],
 });
