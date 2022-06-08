@@ -32,7 +32,7 @@
       transition: all 100ms ease-in-out;
 
       :root[color-theme='dark'] & {
-        background-color: colors.$DARK_POINT_COLOR;
+        background-color: colors.$POINT_COLOR1;
       }
 
       &:hover,

@@ -3,12 +3,13 @@ import { useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
 import { favListState } from 'recoil/atom';
 import ImgCard from 'components/imgCard';
+import { IImgCard } from 'types/image.d';
 import styles from './create.module.scss';
 import Form from './Form';
 
 function Create() {
   const [mainCat, setMainCat] = useState<string>('');
-  const [favoriteList] = useRecoilState<string[]>(favListState);
+  const [favoriteList] = useRecoilState<IImgCard[]>(favListState);
   const [alreadyFavorite, setAlreadyFavorite] = useState(false);
 
   const setInitialCat = async () => {
@@ -26,14 +27,18 @@ function Create() {
   }, []); // 처음 한번만 실행
 
   useEffect(() => {
-    setAlreadyFavorite(favoriteList.includes(mainCat));
+    setAlreadyFavorite(favoriteList.some((fav) => fav.url === mainCat));
   }, [favoriteList, mainCat]);
 
   return (
     <div className={styles.wrap}>
       <Form updateMainCat={updateMainCat} />
       <div className={styles.main}>
-        <ImgCard mainCat={mainCat} alreadyFavorite={alreadyFavorite} />
+        <ImgCard
+          tagName=""
+          mainCat={mainCat}
+          alreadyFavorite={alreadyFavorite}
+        />
       </div>
     </div>
   );

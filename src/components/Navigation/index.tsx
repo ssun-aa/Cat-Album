@@ -4,6 +4,7 @@ import {
   PhotoIcon,
   LightIcon,
   DarkIcon,
+  ChartIcon,
 } from 'assets/svgs/index.js';
 import { NavLink } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
@@ -49,6 +50,14 @@ function Navigation() {
           style={({ isActive }) => (isActive ? { fill: '#AEBAE8' } : {})}
         >
           <HeartIcon />
+        </NavLink>
+        <NavLink
+          to="/chart"
+          aria-label="favorites"
+          className={styles.icon}
+          style={({ isActive }) => (isActive ? { fill: '#AEBAE8' } : {})}
+        >
+          <ChartIcon />
         </NavLink>
       </div>
     </div>

@@ -6,3 +6,8 @@ export interface IListItem {
   url: string;
   width: number;
 }
+
+export interface IImgCard {
+  tag: string;
+  url: string;
+}

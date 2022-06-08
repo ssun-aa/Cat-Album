@@ -7,11 +7,12 @@ import {
 import { useRecoilState } from 'recoil';
 import { favListState } from 'recoil/atom';
 import ImgCard from 'components/imgCard';
+import { IImgCard } from 'types/image.d';
 import styles from './favorites.module.scss';
 
 function Favorites() {
   const [favoriteList, setFavoriteList] =
-    useRecoilState<string[]>(favListState);
+    useRecoilState<IImgCard[]>(favListState);
 
   const handleOnDragEnd = (result: DropResult) => {
     if (!result.destination) return;
@@ -41,14 +42,19 @@ function Favorites() {
               ref={provided.innerRef}
             >
               {favoriteList.map((item, i) => (
-                <Draggable key={item} draggableId={item} index={i}>
+                // eslint-disable-next-line react/no-array-index-key
+                <Draggable key={i} draggableId={`${i}kk`} index={i}>
                   {(provide) => (
                     <li
                       ref={provide.innerRef}
                       {...provide.draggableProps}
                       {...provide.dragHandleProps}
                     >
-                      <ImgCard mainCat={item} alreadyFavorite />
+                      <ImgCard
+                        tagName={item.tag}
+                        mainCat={item.url}
+                        alreadyFavorite
+                      />
                     </li>
                   )}
                 </Draggable>

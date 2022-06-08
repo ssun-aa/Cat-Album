@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import Favorites from './Favorites';
 import Create from './Create';
 import Main from './Main';
+import Chart from './Chart';
 
 function App() {
   const [theme, settheme] = useRecoilState(themeState);
@@ -22,6 +23,7 @@ function App() {
           <Route path="" element={<Main />} />
           <Route path="/create" element={<Create />} />
           <Route path="/fav" element={<Favorites />} />
+          <Route path="/chart" element={<Chart />} />
         </Route>
       </Routes>
     </Router>

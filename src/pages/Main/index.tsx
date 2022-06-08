@@ -2,7 +2,7 @@ import ImgCard from 'components/imgCard';
 import { useState } from 'react';
 import { useRecoilState } from 'recoil';
 import { favListState } from 'recoil/atom';
-import { IListItem } from 'types/image.d';
+import { IListItem, IImgCard } from 'types/image.d';
 import { tagImageApi } from 'utils/fetcher';
 import cx from 'classnames';
 import styles from './main.module.scss';
@@ -11,7 +11,7 @@ function Main() {
   const [images, setImages] = useState([]);
   const [clickedTag, setClickedTag] = useState('');
 
-  const [favoriteList] = useRecoilState<string[]>(favListState);
+  const [favoriteList] = useRecoilState<IImgCard[]>(favListState);
   const tags = [
     {
       id: 5,
@@ -35,7 +35,7 @@ function Main() {
     },
   ];
 
-  const handleClick = async (e: { currentTarget: { value: string } }) => {
+  const handleTagClick = async (e: { currentTarget: { value: string } }) => {
     const clickedButton = e.currentTarget;
     const tag = tags.find((tag) => tag.name === clickedButton.value);
     if (tag) {
@@ -60,7 +60,7 @@ function Main() {
               key={tag.id}
               type="button"
               className={cx(styles.tag, { [styles.active]: isActive })}
-              onClick={handleClick}
+              onClick={handleTagClick}
               value={tag.name}
             >
               {tag.name}
@@ -73,11 +73,15 @@ function Main() {
         <ul>
           {images.map((item: IListItem) => {
             const alreadyFavorite = favoriteList.some(
-              (fav) => fav === item.url
+              (fav) => fav.url === item.url
             );
             return (
               <li key={item.id}>
-                <ImgCard mainCat={item.url} alreadyFavorite={alreadyFavorite} />
+                <ImgCard
+                  tagName={item.categories[0].name}
+                  mainCat={item.url}
+                  alreadyFavorite={alreadyFavorite}
+                />
               </li>
             );
           })}

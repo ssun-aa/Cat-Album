@@ -1,28 +1,36 @@
 import { LikeIcon } from 'assets/svgs/index.js';
 import store from 'storejs';
-import { favListState } from 'recoil/atom';
+import { favListState, favTagData } from 'recoil/atom';
 import { useRecoilState } from 'recoil';
+import { IImgCard } from 'types/image.d';
 import styles from './imgCard.module.scss';
 
 interface Prop {
+  tagName: string;
   mainCat: string;
   alreadyFavorite: boolean;
 }
 
-function ImgCard({ mainCat, alreadyFavorite }: Prop) {
+function ImgCard({ tagName, mainCat, alreadyFavorite }: Prop) {
   const [favoriteList, setFavoriteList] =
-    useRecoilState<string[]>(favListState);
+    useRecoilState<IImgCard[]>(favListState);
+  const [tagData, setTagData] = useRecoilState(favTagData);
 
   function onHeartClick() {
-    if (!alreadyFavorite) {
-      const nextFavorite = [...favoriteList, mainCat];
-      setFavoriteList(nextFavorite);
-      store.set('favoriteList', nextFavorite);
-    } else {
-      const nextFavorite = favoriteList.filter((item) => item !== mainCat);
-      setFavoriteList(nextFavorite);
-      store.set('favoriteList', nextFavorite);
-    }
+    const nextFavorite = alreadyFavorite
+      ? favoriteList.filter((item) => item.url !== mainCat)
+      : [...favoriteList, { tag: tagName, url: mainCat }];
+    setFavoriteList(nextFavorite);
+    store.set('favoriteList', nextFavorite);
+    setTagData(
+      tagData.map((tag) => {
+        if (tag.x === tagName)
+          return alreadyFavorite
+            ? { x: tag.x, y: tag.y - 1 }
+            : { x: tag.x, y: tag.y + 1 };
+        return tag;
+      })
+    );
   }
 
   return (
