@@ -3,12 +3,17 @@ import store from 'storejs';
 import { favListState, favTagData } from 'recoil/atom';
 import { useRecoilState } from 'recoil';
 import { IImgCard } from 'types/image.d';
+import noImage from 'assets/images/noimg.png';
 import styles from './imgCard.module.scss';
 
 interface Prop {
   tagName: string;
   mainCat: string;
   alreadyFavorite: boolean;
+}
+
+function onErrorHandler(e: { currentTarget: { src: string } }) {
+  e.currentTarget.src = noImage;
 }
 
 function ImgCard({ tagName, mainCat, alreadyFavorite }: Prop) {
@@ -35,7 +40,14 @@ function ImgCard({ tagName, mainCat, alreadyFavorite }: Prop) {
 
   return (
     <div className={styles.cardWrap} onDoubleClick={onHeartClick}>
-      <img src={mainCat} alt="고양이" width="100%" className={styles.img} />
+      <img
+        src={mainCat}
+        alt="고양이"
+        width="100%"
+        className={styles.img}
+        loading="lazy"
+        onError={onErrorHandler}
+      />
       <button type="button" onClick={onHeartClick}>
         {alreadyFavorite ? (
           <LikeIcon className={styles.likedicon} />
