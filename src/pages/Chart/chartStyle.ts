@@ -18,12 +18,4 @@ const TOOLTIP_STYLE = {
   },
 };
 
-const AXIS_UNDER_STYLE = {
-  style: {
-    axis: { stroke: '#6d79a8' },
-    grid: { stroke: 'transparent' },
-    tickLabels: { fill: '#94A2AD' },
-  },
-};
-
-export { CHART_STYLE, TOOLTIP_STYLE, AXIS_UNDER_STYLE };
+export { CHART_STYLE, TOOLTIP_STYLE };

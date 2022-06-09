@@ -9,17 +9,16 @@ import {
   VictoryVoronoiContainer,
 } from 'victory';
 import styles from './chart.module.scss';
-import { CHART_STYLE, TOOLTIP_STYLE, AXIS_UNDER_STYLE } from './chartStyle';
+import { CHART_STYLE, TOOLTIP_STYLE } from './chartStyle';
 
 function Chart() {
   const [tagData] = useRecoilState(favTagData);
   const [theme] = useRecoilState(themeState);
-  const max = Math.max(...tagData.map((data) => data.y));
 
   return (
     <div className={styles.wrap}>
       <header className={styles.title}>
-        <p>내 Chart</p>
+        <p>내 Tag Chart</p>
       </header>
       <div className={styles.chartWrap}>
         <VictoryChart

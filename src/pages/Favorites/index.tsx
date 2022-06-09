@@ -41,9 +41,13 @@ function Favorites() {
               {...provided.droppableProps}
               ref={provided.innerRef}
             >
+              {provided.placeholder}
               {favoriteList.map((item, i) => (
-                // eslint-disable-next-line react/no-array-index-key
-                <Draggable key={i} draggableId={`${i}kk`} index={i}>
+                <Draggable
+                  key={`${item.tag}${item.url}`}
+                  draggableId={`${item.tag}${item.url}`}
+                  index={i}
+                >
                   {(provide) => (
                     <li
                       ref={provide.innerRef}
