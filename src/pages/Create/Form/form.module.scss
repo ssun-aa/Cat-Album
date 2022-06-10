@@ -2,7 +2,6 @@
 
 .form {
   width: 100%;
-  margin-bottom: 10px;
 
   input {
     align-items: center;
@@ -13,6 +12,10 @@
     background-color: colors.$WHITE;
     border-radius: 40px;
     box-shadow: 0 5px 100px 0 rgba(gray, 0.1);
+
+    @media (min-width: 768px) {
+      border-radius: 0;
+    }
 
     :root[color-theme='dark'] & {
       background-color: colors.$GRAY4;

@@ -38,6 +38,11 @@
     border-radius: 40px;
     box-shadow: 0 -5px 100px 0 rgba(gray, 0.1);
 
+    @media (min-width: 768px) {
+      margin-top: 0;
+      border-radius: 0;
+    }
+
     :root[color-theme='dark'] & {
       background-color: colors.$GRAY4;
     }
