@@ -12,10 +12,6 @@ const TOOLTIP_STYLE = {
   flyoutHeight: 20,
   pointerLength: 10,
   cornerRadius: 5,
-  flyoutStyle: {
-    stroke: '#b8c4f5',
-    fill: 'transparent',
-  },
 };
 
 export { CHART_STYLE, TOOLTIP_STYLE };

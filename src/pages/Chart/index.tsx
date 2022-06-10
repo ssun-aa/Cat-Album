@@ -31,6 +31,10 @@ function Chart() {
               labelComponent={
                 <VictoryTooltip
                   {...TOOLTIP_STYLE}
+                  flyoutStyle={{
+                    stroke: '#b8c4f5',
+                    fill: theme === 'dark' ? '#333333' : '#fbfbfb',
+                  }}
                   style={{ fill: theme === 'dark' ? '#f3eceb' : '#505050' }}
                 />
               }
