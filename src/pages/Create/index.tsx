@@ -22,7 +22,9 @@ function Create() {
   };
 
   const updateMainCat = async (value: string) => {
+    setIsLoading(true);
     const newCat = await textImageApi(value);
+    setIsLoading((prev) => !prev);
     setMainCat(newCat);
   };
 
