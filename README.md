@@ -42,17 +42,27 @@
 하트 버튼을 재 클릭 하면 즐겨찾기에서 삭제 할 수 있습니다.</br>
 drag & drop을 통해서 이미지의 순서를 변경 할 수 있습니다. 
 
+<span><img src="https://user-images.githubusercontent.com/47405655/173180331-58188139-3741-4762-aad6-b2fbbd6ebeb4.gif" height="500" /></span>
+
+</br>
+
+## 5. dark / light 모드
+오른쪽 하단에 위치한 버튼을 클릭하여 dark / light 모드로 변경할 수 있습니다. 
 
 
+<span><img src="https://user-images.githubusercontent.com/47405655/173180457-f5922793-6061-48e2-89c2-60070c0d97f3.png" height="500" /></span>
+<span><img src="https://user-images.githubusercontent.com/47405655/173180475-6d0214e5-18fa-4c2d-bdd5-2943f798119e.png" height="500" /></span>
 
 
 </br>
 
-## 4. dark / light 모드
-오른쪽 하단에 위치한 버튼을 클릭하여 dark / light 모드로 변경할 수 있습니다. 
+## 4. 더블클릭
+더블클릭을 통해서 사진을 좋아요 누르기/취소 기능을 사용할 수 있습니다. 
 
-<span><img src="https://user-images.githubusercontent.com/47405655/172021819-98949814-c753-4ade-ba74-7a795798f351.png" height="500" /></span>
-<span><img src="https://user-images.githubusercontent.com/47405655/172021946-2919f0a7-0868-45f3-8105-811743ec3ac6.png" height="500" /></span>
+<span><img src="https://user-images.githubusercontent.com/47405655/173180192-5712d2b9-1e56-44b3-b5be-480c4684cb1a.gif" height="500" /></span>
+
+
+
 
 
 
