@@ -19,7 +19,12 @@ function Navigation() {
   };
   return (
     <div className={styles.wrap}>
-      <button type="button" onClick={handleThemeClick} className={styles.theme}>
+      <button
+        type="button"
+        onClick={handleThemeClick}
+        className={styles.theme}
+        aria-label="theme"
+      >
         {theme === 'light' ? (
           <LightIcon className={styles.themeIcon} />
         ) : (
