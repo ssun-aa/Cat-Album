@@ -21,8 +21,9 @@
 상단에 위치한 태그를 클릭하여 해당 태그와 관련된 고양이 이미지를 불러와 보여줍니다.</br>
 사진의 오른쪽 상단에 위치한 하트 버튼을 눌러 즐겨찾기에 추가할 수 있습니다.
 
-<span><img src="https://user-images.githubusercontent.com/47405655/172021819-98949814-c753-4ade-ba74-7a795798f351.png" height="500" /></span>
-<span><img src="https://user-images.githubusercontent.com/47405655/172021837-f89de187-6327-4d56-8950-2210751efcf5.png" height="500" /></span>
+<span><img src="https://user-images.githubusercontent.com/47405655/173179415-ee10aba6-3cac-4fb6-b23e-db8cf8c9be3f.png" height="500" /></span>
+<span><img src="https://user-images.githubusercontent.com/47405655/173179425-f3dcc09a-5639-47ec-98e9-d1a510285245.png" height="500" /></span>
+
 
 </br>
 
@@ -30,8 +31,9 @@
 상단에 위치한 입력창에 원하는 영어 문구를 입력 후 엔터를 클릭하면, 해당 문구가 삽입 된 이미지를 생성 할 수 있습니다. </br>
 역시 마찬가지로 사진의 오른쪽 상단에 위치한 하트 버튼을 눌러 즐겨찾기에 추가할 수 있습니다.
 
-<span><img src="https://user-images.githubusercontent.com/47405655/172021761-829ccbc3-b492-4849-abe0-ab4dbdc5146e.png" height="500" /></span>
-<span><img src="https://user-images.githubusercontent.com/47405655/172021742-17b256de-79d0-44a9-b918-6fd8802f4d6f.png" height="500" /></span>
+
+<span><img src="https://user-images.githubusercontent.com/47405655/173179348-065c2c94-3fa5-4605-a4f9-8a8fc2de4663.png" height="500" /></span>
+<span><img src="https://user-images.githubusercontent.com/47405655/173179373-489c05d8-663e-4fcc-959e-bafd6982b05e.png" height="500" /></span>
 
 </br>
 
@@ -40,7 +42,9 @@
 하트 버튼을 재 클릭 하면 즐겨찾기에서 삭제 할 수 있습니다.</br>
 drag & drop을 통해서 이미지의 순서를 변경 할 수 있습니다. 
 
-<span><img src="https://user-images.githubusercontent.com/47405655/172021887-c37200e3-e19f-408c-b218-65ba8246530f.gif" height="500" /></span>
+
+
+
 
 </br>
 
