@@ -24,6 +24,10 @@ function Form({ updateMainCat }: Prop) {
     updateMainCat(value);
   }
 
+  function handleInputFocus(e: { currentTarget: { value: string } }) {
+    e.currentTarget.value = '';
+  }
+
   return (
     <form className={styles.form} onSubmit={handleFormSubmit}>
       <input
@@ -31,6 +35,7 @@ function Form({ updateMainCat }: Prop) {
         name="name"
         placeholder="이곳에 영어 문구를 넣은 후 엔터를 눌러주세요"
         onChange={handleInputChange}
+        onFocus={handleInputFocus}
       />
     </form>
   );
