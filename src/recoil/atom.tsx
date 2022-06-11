@@ -5,9 +5,8 @@ import { IImgCard } from 'types/image.d';
 const data = store.get('favoriteList');
 
 export const favListState = atom<IImgCard[]>({
-  key: '#favList', // unique ID (with respect to other atoms/selectors)
-
-  default: data || [], // default value (aka initial value)
+  key: '#favList',
+  default: data || [],
 });
 
 export const themeState = atom({
@@ -16,7 +15,7 @@ export const themeState = atom({
 });
 
 export const favTagData = atom({
-  key: '#favoriteData',
+  key: '#favoriteTagData',
   default: [
     {
       x: 'boxes',

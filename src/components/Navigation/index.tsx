@@ -17,6 +17,7 @@ function Navigation() {
     const newTheme = theme === 'light' ? 'dark' : 'light';
     settheme(newTheme);
   };
+
   return (
     <div className={styles.wrap}>
       <button
