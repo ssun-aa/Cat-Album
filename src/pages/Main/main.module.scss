@@ -34,6 +34,10 @@
       background-color: colors.$POINT_COLOR;
       border-radius: 40px;
       transition: all 100ms ease-in-out;
+      @media (min-width: 768px) {
+        padding: 5px 20px;
+        font-size: 17px;
+      }
 
       :root[color-theme='dark'] & {
         background-color: colors.$POINT_COLOR1;

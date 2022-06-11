@@ -7,13 +7,17 @@
 
   .theme {
     position: absolute;
-    top: -70px;
+    top: -65px;
     right: 10px;
     padding: 10px 12px;
     background-color: colors.$BEIGE1;
     border-radius: 50px;
     box-shadow: 1px 3px 21px -6px rgba(135, 135, 135, 96%);
     fill: colors.$POINT_COLOR;
+
+    @media (min-width: 768px) {
+      top: -75px;
+    }
 
     :root[color-theme='dark'] & {
       background-color: colors.$DARK_BEIGE1;
