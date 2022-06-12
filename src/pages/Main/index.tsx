@@ -47,7 +47,7 @@ function Main() {
 
   const noData = () => {
     if (images.length !== 0) return null;
-    return <span>태그를 클릭해 검색해 보세요</span>;
+    return <p>태그를 클릭해 검색해 보세요</p>;
   };
 
   return (

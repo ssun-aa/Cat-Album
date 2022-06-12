@@ -30,7 +30,7 @@ function Favorites() {
 
   const noData = () => {
     if (favoriteList.length !== 0) return null;
-    return <span className={styles['no-data']}>좋아요 목록이 비어있어요</span>;
+    return <p className={styles['no-data']}>좋아요 목록이 비어있어요</p>;
   };
 
   return (

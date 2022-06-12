@@ -13,6 +13,7 @@ import styles from './navigation.module.scss';
 
 function Navigation() {
   const [theme, settheme] = useRecoilState(themeState);
+
   const handleThemeClick = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
     settheme(newTheme);

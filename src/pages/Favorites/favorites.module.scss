@@ -43,7 +43,8 @@
     overflow: scroll;
     text-align: center;
 
-    span {
+    p {
+      padding: 30px;
       color: colors.$GRAY6;
 
       :root[color-theme='dark'] & {
