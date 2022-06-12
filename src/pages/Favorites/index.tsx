@@ -28,11 +28,16 @@ function Favorites() {
     setFavoriteList(currentList);
   };
 
+  const noData = () => {
+    if (favoriteList.length !== 0) return null;
+    return <span className={styles['no-data']}>좋아요 목록이 비어있어요</span>;
+  };
+
   return (
     <div className={styles.wrap}>
-      <header className={styles.title}>
+      <div className={styles.title}>
         <p>내 즐겨찾기</p>
-      </header>
+      </div>
       <DragDropContext onDragEnd={handleOnDragEnd}>
         <Droppable droppableId="favorites">
           {(provided) => (
@@ -42,6 +47,7 @@ function Favorites() {
               ref={provided.innerRef}
             >
               {provided.placeholder}
+              {noData()}
               {favoriteList.map((item, i) => (
                 <Draggable
                   key={`${item.tag}${item.url}`}

@@ -17,9 +17,9 @@ function Chart() {
 
   return (
     <div className={styles.wrap}>
-      <header className={styles.title}>
+      <div className={styles.title}>
         <p>내 Tag Chart</p>
-      </header>
+      </div>
       <div className={styles.chartWrap}>
         <VictoryChart
           polar

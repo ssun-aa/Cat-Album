@@ -52,7 +52,7 @@ function Main() {
 
   return (
     <div className={styles.wrap}>
-      <header className={styles.tags}>
+      <div className={styles.tags}>
         {tags.map((tag) => {
           const isActive = tag.name === clickedTag;
           return (
@@ -67,7 +67,7 @@ function Main() {
             </button>
           );
         })}
-      </header>
+      </div>
       <main>
         {noData()}
         <ul>
